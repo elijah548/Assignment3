@@ -1,0 +1,64 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<!-- Main Content -->
+<main>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to My <%= title%> page</h1>
+    <% if (title == "Home") { %>
+    <h3>Hello my name is Elijah Devadas.</h3>
+    <img src="Assets/Screenshot_20230930-163207~2.png" width="430">
+    <img src="Assets/PXL_20231014_151133879.MP(1).jpg" width="400">
+    <img src="Assets/Screenshot_20231102-211308.png" width="430">
+  <% } %>
+  
+  <% if (title == "About Me") { %>
+    <article> <h3>My name is Elijah Devadas. I was born on August 12, 2003, in Toronto, Ontario. 
+        I am a second-year student at Ontario Tech University, enrolled in the Networking and IT Security program. My goal, once I graduate from this program, is to secure a job in the cybersecurity field. 
+        My hobbies include playing all types of sports and video games. My two favorite video games are FIFA 23 and NBA 2K23. 
+        If I were to describe myself, I would say I am a hard-working individual striving to be the best version of myself each and every single day.</h3>
+        <body>
+        <img src="Assets/Image 1.png" width="200">
+        <img src="Assets/960x0.webp" width="200">
+        <img src="Assets/NBA-2K23-Devin-Booker-Cover-Image.jpg" width="200">
+        <img src="Assets/Screenshot 2023-11-02 214911.png" width="250">
+        <video controls poster="Assets/Screenshot (247).png" width="400">
+                <source src="Assets/FunFacts.mp4" type="video/mp4">
+                <source src="Assets/FunFacts.ogv" type="video/ogg">
+                </video>
+      <% } %>
+    
+    <% if (title == "Projects") { %>
+    <article> <h3>Below is a model of a neuron I created for my Grade 12 psychology class. Also, below is a Python project I worked on during my first year of university for the INFR 1101U course.</h3>
+    <img src="Assets/Screenshot (23).png" width="500">
+    <img src="Assets/Screenshot 2023-11-02 213034.png" width="500">
+    <% } %>
+
+    <% if (title == "Contact Me") { %>
+    <h3>Feel free to Contact me.</h3>
+    <body>
+        <form action="https://formspree.io/f/meqbpgyp" method="Post">
+        <h1>Contact Form</h1>
+        <input type="text" name="first" placeholder="First Name" required>
+        <input type="text" name="Last" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea rows="5" cols="60" name="message" placeholder="Enter Message" required></textarea>
+        <button type="Submit">Submit</button>
+        </form>
+    </body>
+    <img src="Assets/Screenshot 2023-11-02 215752.png" width="330">
+     <% } %> 
+
+
+  </div>
+</div>
+</div>
+
+<main>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>   
+ 
+
+
+
+
