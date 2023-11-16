@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+<% include partials/main_nav.ejs %>
+<main>
+ <!-- Main Content --> 
+    <div class="container">
+      <div class="row">
+      <div class="col-md-offset-3 col-md-8">
+      <h1><%= title %></h1>
+      <a href="/workout-list/add" class="btn btn-primary" role="button">
+         <i class="fas fa-plus-circle"></i> Add a Workout 
+      </a>
+      <br>
+      <br>
+      <table class= "table table-bordered table-striped table-hover">
+      <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Sets</th>
+      <th class="text-center">Reps</th>
+      <th class="text-center">Muscles targeted</th>
+      <th class="text-center">Rest between sets</th>
+      <th class="text-center col-1"></th>
+      <th class="text-center col-1"></th>
+      </tr>
+      <!-- Repeat the template -->
+      <% for(let count = 0; count < Workoutlist.length; count++) { %>
+    <tr>
+        <td class="text-center"><%= Workoutlist[count].name %></td>
+        <td class="text-center"><%= Workoutlist[count].sets %></td>
+        <td class="text-center"><%= Workoutlist[count].reps %></td>
+        <td class="text-center"><%= Workoutlist[count].description %></td>
+        <td class="text-center"><%= Workoutlist[count].rest %></td>
+        <td class="text-center col-1">
+           <a href="/workout/edit/<%= Workoutlist[count]._id %>"
+               class="btn btn-primary"
+               <i class="fas fa-pencil-alt"></i> Edit </a>
+        </td>
+        <td class="text-center col-1">
+           <a href="/workout-list/delete/<%= Workoutlist[count]._id %>"
+               class="btn btn-danger"
+               <i class="fas fa-trash-alt"></i> Delete </a>
+           </td>
+        
+        
+    </tr>
+<% } %>
+</table>
+</div> 
+
+</div>
+</div>
+</main>
+
+<% include partials/bottom_nav.ejs %>
+<% include partials/footer.ejs %>
